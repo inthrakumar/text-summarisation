@@ -1,7 +1,6 @@
 import spacy
 from tags import nouns, adjectives, verbs, articles, propernouns
-from tokenizer import Tokenizer  
-
+# from tokenizer import Tokenizer  
 
 nlp = spacy.load('en_core_web_sm')
 
@@ -9,9 +8,9 @@ class Pos:
     def __init__(self):
         pass
 
-    def pos_tag(self, text):
-        tokenizer = Tokenizer(text)
-        tokens = tokenizer.word_tokenizer()
+    def pos_tag(self, tokens):
+        # tokenizer = Tokenizer(text)
+        # tokens = tokenizer.word_tokenizer()
         allowed_pos = ['ADJ', 'PROPN', 'VERB', 'NOUN']
         pos_tags = []
 
@@ -21,9 +20,7 @@ class Pos:
                 pos_tags.append(doc[0].text)
         return pos_tags
 
-    def manual_pos_tags(self, text):
-        tokenizer = Tokenizer(text)
-        tokens = tokenizer.word_tokenizer()
+    def manual_pos_tags(self, tokens):
         noun = nouns
         adjective = adjectives
         verb = verbs
@@ -40,8 +37,8 @@ class Pos:
                 pos_tags.append((word))
             elif word in propernoun:
                 pos_tags.append((word))
-            # else:
-                
+            else:
+                continue
             #     doc = nlp(word)
             #     pos_tags.append((word, doc[0].pos_))
         return pos_tags
