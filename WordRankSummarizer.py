@@ -41,7 +41,7 @@ tokens1=pos.pos_tag(tokens)
 # print(tokens)
   
 
-def WordRank()
+
 word_freq=Counter(tokens1)
 
 # 3. check if counter is working
