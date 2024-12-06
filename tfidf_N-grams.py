@@ -1,6 +1,9 @@
 import math
 import numpy as np
 import re
+import pandas as pd
+df = pd.read_excel('data.xlsx')
+
 
 # Define stopwords
 stopwords = {'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", 
@@ -119,4 +122,9 @@ text = """
     It enables computers to read, understand, and derive meaning from human language.
     Text summarization is a crucial task in NLP where the goal is to shorten a long text into a concise and coherent summary.
     """
-TF_IDF(text, num_sentences=2, n=2)
+
+# print(df.iloc[0,1])
+text1=df.iloc[0,1]
+# print(text1)
+
+TF_IDF(text1, num_sentences=2, n=2)

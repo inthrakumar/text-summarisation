@@ -36,7 +36,7 @@ tokens=tokenizer.word_tokenizer()
 
 
 pos=Pos()
-tokens1=pos.pos_tag(tokens)
+tokens1=pos.manual_pos_tags(tokens)
 # 2. check if pos is working
 # print(tokens)
   
